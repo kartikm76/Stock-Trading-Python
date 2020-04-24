@@ -11,7 +11,7 @@ def hello():
 def hello_name(name):
     return "Hello {}!".format(name)
 
-@app.route('/Guruji')
+@app.route('/api')
 def index():
    #cur = mysql.connection.cursor()
    #cur.execute('''SELECT * FROM Users WHERE id=1''')
