@@ -11,6 +11,7 @@ from service.user_account_service import UserAccountService
 from service.stock_holding_service import StockHoldingService
 from service.trade_activity_service import TradeActivityService
 from service.execute_trade_service import ExecuteTradeService
+from service.account_balance_service import AccountBalanceService
 
 from utils.object_serialize import SerializeObject
 
@@ -78,6 +79,11 @@ class ExecuteTrade(Resource):
 class TradeActivity(Resource):
     def get(self, id):
         return TradeActivityService().get_trade_activity(id)
+
+@ns_conf.route("/account-balance/<id>", methods=["GET"])
+class AccountBalance(Resource):
+    def get(self, id):
+        return AccountBalanceService().get_account_balance(id)
 
 if __name__ == '__main__':
     Database.initialize_connection_pool()
