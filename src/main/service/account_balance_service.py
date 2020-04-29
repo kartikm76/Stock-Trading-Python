@@ -13,8 +13,13 @@ class AccountBalanceService:
         account_balance_list = []
 
         with DatabaseConnect() as cursor:
-            sql_select_query = """select * from account_balance where account_id = %s"""
-            cursor.execute(sql_select_query, (self.id,))         
+            if self.id is None:
+                sql_select_query = "select * from account_balance"
+                cursor.execute(sql_select_query)
+            else:
+                sql_select_query = """select * from account_balance where account_id = %s"""
+                cursor.execute(sql_select_query, (self.id,))
+            
             data_rows = cursor.fetchall()
             print("Total number of rows: ", cursor.rowcount)
             

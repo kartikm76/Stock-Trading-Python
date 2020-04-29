@@ -29,7 +29,7 @@ NOTE: you may have python or python3 installed. Please change the instructions a
     WARNING: This is a development server. Do not use it in a production deployment.
     Use a production WSGI server instead.
     * Debug mode: on
-    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)]'[[[]]]
     * Restarting with stat
     * Debugger is active!
     * Debugger PIN: 661-488-292

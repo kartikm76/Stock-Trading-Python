@@ -5,7 +5,7 @@ from utils.object_serialize import SerializeObject
 from utils.convert_to_dictionary import ConvertToDictionary
 
 class TradeActivityService:
-    def get_trade_activity(self, id):        
+    def get_trade_activity(self, id=None):        
         self.id = id
 
         data_rows = None
@@ -13,11 +13,18 @@ class TradeActivityService:
         trade_activity_list = []
 
         with DatabaseConnect() as cursor:
-            sql_select_query = """  select a.account_id, a.stock_symbol, a.transaction_qty, a.transaction_price, b.description as transaction_type, 
-                                    a.transaction_date from trade_activity a, transaction_type_code b 
-                                    where a.transaction_type_code = b.code 
-                                    and account_id = %s"""
-            cursor.execute(sql_select_query, (self.id,))
+            if self.id is None:
+                sql_select_query = """  select a.account_id, a.stock_symbol, a.transaction_qty, a.transaction_price, b.description as transaction_type, 
+                                        a.transaction_date from trade_activity a, transaction_type_code b 
+                                        where a.transaction_type_code = b.code order by a.account_id"""
+                cursor.execute(sql_select_query)
+            else:
+                sql_select_query = """  select a.account_id, a.stock_symbol, a.transaction_qty, a.transaction_price, b.description as transaction_type, 
+                                        a.transaction_date from trade_activity a, transaction_type_code b 
+                                        where a.transaction_type_code = b.code 
+                                        and account_id = %s"""
+                cursor.execute(sql_select_query, (self.id,))
+
             data_rows = cursor.fetchall()
             print("Total number of rows: ", cursor.rowcount)
             
