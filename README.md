@@ -1,4 +1,5 @@
 Connection Pool - https://overiq.com/mysql-connector-python-101/connection-pooling-using-connector-python/
+Addiional Help - https://nikgrozev.com/2018/10/12/python-api-with-flask-and-flask-restplus/
 
 NOTE: you may have python or python3 installed. Please change the instructions accordingly
 
