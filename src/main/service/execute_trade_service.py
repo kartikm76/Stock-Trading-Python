@@ -10,4 +10,8 @@ class ExecuteTradeService:
     def manage_stock_holding(self, data):
         self.tradeObject = data        
         print (self.tradeObject)
-        return self.tradeObject
+            
+## work to be done
+## 1. insert (B) or update (B) or delete (S) record in stock_holding
+## 2. update account_balance
+## 3. insert a record in trade_activity
