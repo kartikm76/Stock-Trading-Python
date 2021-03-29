@@ -68,7 +68,7 @@ protobuf==3.6.1
 ptyprocess==0.6.0
 py4j==0.10.7
 pydantic==1.5.1
-Pygments==2.5.2
+Pygments==2.7.4
 pylint==2.4.4
 PyMySQL==0.9.3
 pyrsistent==0.16.0
