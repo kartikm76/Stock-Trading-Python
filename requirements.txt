@@ -72,7 +72,7 @@ Pygments==2.5.2
 pylint==2.4.4
 PyMySQL==0.9.3
 pyrsistent==0.16.0
-pyspark==2.4.5
+pyspark==3.2.2
 python-dateutil==2.8.1
 pytz==2019.3
 PyYAML==5.3
